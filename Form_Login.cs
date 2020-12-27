@@ -13,6 +13,7 @@ namespace MySQL_Shop
 {
     public partial class Form_Login : Skin_DevExpress
     {
+        public string LoginID =string.Empty;
         public bool isLogin = false;
         MySQLHelper DB = GlobalVariable.helper;
         public Form_Login()
@@ -35,11 +36,13 @@ namespace MySQL_Shop
         {
             if (skinTextBox1.Text != string.Empty || skinTextBox2.Text !=string.Empty)
             {
-                string sql = "select* from sh_user where name =" + "'" + skinTextBox1.Text + "' and password ='" + skinTextBox2.Text + "'";
-                int result = DB.GetDataSet(sql).Tables[0].DefaultView.Count;
+                string sql = "select id from sh_user where name =" + "'" + skinTextBox1.Text + "' and password ='" + skinTextBox2.Text + "'";
+                DataView LoginView = DB.GetDataSet(sql).Tables[0].DefaultView;
+                int result =LoginView.Count;
                 if (result ==1)
                 {
                     isLogin = true;
+                    LoginID = LoginView[0][0].ToString();
                     this.Close();
                 }
                 else

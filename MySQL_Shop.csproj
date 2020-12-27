@@ -115,6 +115,12 @@
     </Compile>
     <Compile Include="GlobalVariable.cs" />
     <Compile Include="MySQLHelper.cs" />
+    <Compile Include="Form_PayInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_PayInfo.Designer.cs">
+      <DependentUpon>Form_PayInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddToCart.resx">
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Main.resx">
       <DependentUpon>Form_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_PayInfo.resx">
+      <DependentUpon>Form_PayInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
