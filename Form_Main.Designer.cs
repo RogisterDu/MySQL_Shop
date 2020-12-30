@@ -30,11 +30,11 @@ namespace MySQL_Shop
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Main));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Main));
             this.skinTabControl1 = new CCWin.SkinControl.SkinTabControl();
             this.skinTabPage1 = new CCWin.SkinControl.SkinTabPage();
             this.skinButton1 = new CCWin.SkinControl.SkinButton();
@@ -47,16 +47,45 @@ namespace MySQL_Shop
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.修改数量ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.skinButton3 = new CCWin.SkinControl.SkinButton();
             this.skinButton2 = new CCWin.SkinControl.SkinButton();
             this.skinTabPage3 = new CCWin.SkinControl.SkinTabPage();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.修改数量ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.skinTabControl2 = new CCWin.SkinControl.SkinTabControl();
+            this.skinTabPage4 = new CCWin.SkinControl.SkinTabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.listView3 = new System.Windows.Forms.ListView();
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.skinTabPage5 = new CCWin.SkinControl.SkinTabPage();
+            this.skinButton5 = new CCWin.SkinControl.SkinButton();
+            this.skinButton4 = new CCWin.SkinControl.SkinButton();
+            this.listView2 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.skinTabPage6 = new CCWin.SkinControl.SkinTabPage();
             this.skinTabControl1.SuspendLayout();
             this.skinTabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.skinDataGridView1)).BeginInit();
             this.skinTabPage2.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            this.skinTabPage3.SuspendLayout();
+            this.skinTabControl2.SuspendLayout();
+            this.skinTabPage4.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.skinTabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // skinTabControl1
@@ -80,9 +109,9 @@ namespace MySQL_Shop
             this.skinTabControl1.PageHover = ((System.Drawing.Image)(resources.GetObject("skinTabControl1.PageHover")));
             this.skinTabControl1.PageImagePosition = CCWin.SkinControl.SkinTabControl.ePageImagePosition.Left;
             this.skinTabControl1.PageNorml = null;
-            this.skinTabControl1.SelectedIndex = 1;
+            this.skinTabControl1.SelectedIndex = 0;
             this.skinTabControl1.ShowToolTips = true;
-            this.skinTabControl1.Size = new System.Drawing.Size(998, 588);
+            this.skinTabControl1.Size = new System.Drawing.Size(1154, 583);
             this.skinTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.skinTabControl1.TabIndex = 0;
             // 
@@ -98,17 +127,19 @@ namespace MySQL_Shop
             this.skinTabPage1.Location = new System.Drawing.Point(0, 36);
             this.skinTabPage1.Margin = new System.Windows.Forms.Padding(6);
             this.skinTabPage1.Name = "skinTabPage1";
-            this.skinTabPage1.Size = new System.Drawing.Size(998, 552);
+            this.skinTabPage1.Size = new System.Drawing.Size(1154, 547);
             this.skinTabPage1.TabIndex = 0;
             this.skinTabPage1.TabItemImage = global::MySQL_Shop.Properties.Resources.Shop;
             this.skinTabPage1.Text = "商     品     列     表";
             // 
             // skinButton1
             // 
+            this.skinButton1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.skinButton1.BackColor = System.Drawing.Color.Transparent;
             this.skinButton1.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.skinButton1.DownBack = null;
-            this.skinButton1.Location = new System.Drawing.Point(810, 485);
+            this.skinButton1.Location = new System.Drawing.Point(966, 485);
             this.skinButton1.MouseBack = null;
             this.skinButton1.Name = "skinButton1";
             this.skinButton1.NormlBack = null;
@@ -163,7 +194,7 @@ namespace MySQL_Shop
             this.skinDataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.skinDataGridView1.RowTemplate.Height = 23;
             this.skinDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.skinDataGridView1.Size = new System.Drawing.Size(710, 468);
+            this.skinDataGridView1.Size = new System.Drawing.Size(866, 463);
             this.skinDataGridView1.TabIndex = 1;
             this.skinDataGridView1.TitleBack = null;
             this.skinDataGridView1.TitleBackColorBegin = System.Drawing.Color.White;
@@ -175,7 +206,7 @@ namespace MySQL_Shop
             | System.Windows.Forms.AnchorStyles.Left)));
             this.skinTreeView1.Location = new System.Drawing.Point(17, 3);
             this.skinTreeView1.Name = "skinTreeView1";
-            this.skinTreeView1.Size = new System.Drawing.Size(217, 510);
+            this.skinTreeView1.Size = new System.Drawing.Size(217, 505);
             this.skinTreeView1.TabIndex = 0;
             this.skinTreeView1.BeforeCheck += new System.Windows.Forms.TreeViewCancelEventHandler(this.skinTreeView1_BeforeCheck);
             this.skinTreeView1.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.skinTreeView1_AfterCheck);
@@ -193,13 +224,15 @@ namespace MySQL_Shop
             this.skinTabPage2.ForeColor = System.Drawing.Color.Black;
             this.skinTabPage2.Location = new System.Drawing.Point(0, 36);
             this.skinTabPage2.Name = "skinTabPage2";
-            this.skinTabPage2.Size = new System.Drawing.Size(998, 552);
+            this.skinTabPage2.Size = new System.Drawing.Size(1154, 547);
             this.skinTabPage2.TabIndex = 1;
             this.skinTabPage2.TabItemImage = global::MySQL_Shop.Properties.Resources.shopping_cartEmpty;
             this.skinTabPage2.Text = "购    物   车";
             // 
             // skinLabel1
             // 
+            this.skinLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.skinLabel1.AutoSize = true;
             this.skinLabel1.BackColor = System.Drawing.Color.Transparent;
             this.skinLabel1.BorderColor = System.Drawing.Color.White;
@@ -219,12 +252,13 @@ namespace MySQL_Shop
             this.columnHeader4,
             this.columnHeader5});
             this.listView1.ContextMenuStrip = this.contextMenuStrip1;
+            this.listView1.Dock = System.Windows.Forms.DockStyle.Top;
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(16, 3);
+            this.listView1.Location = new System.Drawing.Point(0, 0);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(927, 460);
+            this.listView1.Size = new System.Drawing.Size(1154, 460);
             this.listView1.TabIndex = 3;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -250,48 +284,6 @@ namespace MySQL_Shop
             this.columnHeader5.Text = "总价";
             this.columnHeader5.Width = 212;
             // 
-            // skinButton3
-            // 
-            this.skinButton3.BackColor = System.Drawing.Color.Transparent;
-            this.skinButton3.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.skinButton3.DownBack = null;
-            this.skinButton3.Location = new System.Drawing.Point(810, 508);
-            this.skinButton3.MouseBack = null;
-            this.skinButton3.Name = "skinButton3";
-            this.skinButton3.NormlBack = null;
-            this.skinButton3.Size = new System.Drawing.Size(152, 36);
-            this.skinButton3.TabIndex = 2;
-            this.skinButton3.Text = "结算";
-            this.skinButton3.UseVisualStyleBackColor = false;
-            this.skinButton3.Click += new System.EventHandler(this.skinButton3_Click);
-            // 
-            // skinButton2
-            // 
-            this.skinButton2.BackColor = System.Drawing.Color.Transparent;
-            this.skinButton2.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.skinButton2.DownBack = null;
-            this.skinButton2.Location = new System.Drawing.Point(643, 508);
-            this.skinButton2.MouseBack = null;
-            this.skinButton2.Name = "skinButton2";
-            this.skinButton2.NormlBack = null;
-            this.skinButton2.Size = new System.Drawing.Size(150, 36);
-            this.skinButton2.TabIndex = 1;
-            this.skinButton2.Text = "从购物车内删除";
-            this.skinButton2.UseVisualStyleBackColor = false;
-            this.skinButton2.Click += new System.EventHandler(this.skinButton2_Click);
-            // 
-            // skinTabPage3
-            // 
-            this.skinTabPage3.BackColor = System.Drawing.Color.White;
-            this.skinTabPage3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.skinTabPage3.Font = new System.Drawing.Font("阿里巴巴普惠体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.skinTabPage3.Location = new System.Drawing.Point(0, 36);
-            this.skinTabPage3.Name = "skinTabPage3";
-            this.skinTabPage3.Size = new System.Drawing.Size(998, 552);
-            this.skinTabPage3.TabIndex = 2;
-            this.skinTabPage3.TabItemImage = global::MySQL_Shop.Properties.Resources.Profile_;
-            this.skinTabPage3.Text = "个    人   中    心";
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -306,12 +298,301 @@ namespace MySQL_Shop
             this.修改数量ToolStripMenuItem.Text = "修改数量";
             this.修改数量ToolStripMenuItem.Click += new System.EventHandler(this.修改数量ToolStripMenuItem_Click);
             // 
+            // skinButton3
+            // 
+            this.skinButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.skinButton3.BackColor = System.Drawing.Color.Transparent;
+            this.skinButton3.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.skinButton3.DownBack = null;
+            this.skinButton3.Location = new System.Drawing.Point(982, 488);
+            this.skinButton3.MouseBack = null;
+            this.skinButton3.Name = "skinButton3";
+            this.skinButton3.NormlBack = null;
+            this.skinButton3.Size = new System.Drawing.Size(152, 47);
+            this.skinButton3.TabIndex = 2;
+            this.skinButton3.Text = "结算";
+            this.skinButton3.UseVisualStyleBackColor = false;
+            this.skinButton3.Click += new System.EventHandler(this.skinButton3_Click);
+            // 
+            // skinButton2
+            // 
+            this.skinButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.skinButton2.BackColor = System.Drawing.Color.Transparent;
+            this.skinButton2.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.skinButton2.DownBack = null;
+            this.skinButton2.Location = new System.Drawing.Point(784, 488);
+            this.skinButton2.MouseBack = null;
+            this.skinButton2.Name = "skinButton2";
+            this.skinButton2.NormlBack = null;
+            this.skinButton2.Size = new System.Drawing.Size(150, 47);
+            this.skinButton2.TabIndex = 1;
+            this.skinButton2.Text = "从购物车内删除";
+            this.skinButton2.UseVisualStyleBackColor = false;
+            this.skinButton2.Click += new System.EventHandler(this.skinButton2_Click);
+            // 
+            // skinTabPage3
+            // 
+            this.skinTabPage3.BackColor = System.Drawing.Color.White;
+            this.skinTabPage3.Controls.Add(this.skinTabControl2);
+            this.skinTabPage3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.skinTabPage3.Font = new System.Drawing.Font("阿里巴巴普惠体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.skinTabPage3.Location = new System.Drawing.Point(0, 36);
+            this.skinTabPage3.Name = "skinTabPage3";
+            this.skinTabPage3.Size = new System.Drawing.Size(1154, 547);
+            this.skinTabPage3.TabIndex = 2;
+            this.skinTabPage3.TabItemImage = global::MySQL_Shop.Properties.Resources.Profile_;
+            this.skinTabPage3.Text = "个    人   中    心";
+            // 
+            // skinTabControl2
+            // 
+            this.skinTabControl2.Alignment = System.Windows.Forms.TabAlignment.Left;
+            this.skinTabControl2.AnimatorType = CCWin.SkinControl.AnimationType.HorizSlide;
+            this.skinTabControl2.CloseRect = new System.Drawing.Rectangle(2, 2, 12, 12);
+            this.skinTabControl2.Controls.Add(this.skinTabPage4);
+            this.skinTabControl2.Controls.Add(this.skinTabPage5);
+            this.skinTabControl2.Controls.Add(this.skinTabPage6);
+            this.skinTabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.skinTabControl2.Font = new System.Drawing.Font("阿里巴巴普惠体", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.skinTabControl2.HeadBack = null;
+            this.skinTabControl2.ImgSize = new System.Drawing.Size(40, 40);
+            this.skinTabControl2.ImgTxtOffset = new System.Drawing.Point(0, 0);
+            this.skinTabControl2.ItemSize = new System.Drawing.Size(150, 180);
+            this.skinTabControl2.Location = new System.Drawing.Point(0, 0);
+            this.skinTabControl2.Multiline = true;
+            this.skinTabControl2.Name = "skinTabControl2";
+            this.skinTabControl2.PageArrowDown = ((System.Drawing.Image)(resources.GetObject("skinTabControl2.PageArrowDown")));
+            this.skinTabControl2.PageArrowHover = ((System.Drawing.Image)(resources.GetObject("skinTabControl2.PageArrowHover")));
+            this.skinTabControl2.PageCloseHover = ((System.Drawing.Image)(resources.GetObject("skinTabControl2.PageCloseHover")));
+            this.skinTabControl2.PageCloseNormal = ((System.Drawing.Image)(resources.GetObject("skinTabControl2.PageCloseNormal")));
+            this.skinTabControl2.PageDown = ((System.Drawing.Image)(resources.GetObject("skinTabControl2.PageDown")));
+            this.skinTabControl2.PageHover = ((System.Drawing.Image)(resources.GetObject("skinTabControl2.PageHover")));
+            this.skinTabControl2.PageImagePosition = CCWin.SkinControl.SkinTabControl.ePageImagePosition.Left;
+            this.skinTabControl2.PageNorml = null;
+            this.skinTabControl2.SelectedIndex = 0;
+            this.skinTabControl2.Size = new System.Drawing.Size(1154, 547);
+            this.skinTabControl2.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+            this.skinTabControl2.TabIndex = 0;
+            // 
+            // skinTabPage4
+            // 
+            this.skinTabPage4.BackColor = System.Drawing.Color.White;
+            this.skinTabPage4.Controls.Add(this.groupBox1);
+            this.skinTabPage4.Controls.Add(this.listView3);
+            this.skinTabPage4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.skinTabPage4.Location = new System.Drawing.Point(180, 0);
+            this.skinTabPage4.Name = "skinTabPage4";
+            this.skinTabPage4.Size = new System.Drawing.Size(974, 547);
+            this.skinTabPage4.TabIndex = 0;
+            this.skinTabPage4.TabItemImage = global::MySQL_Shop.Properties.Resources.MyOrder;
+            this.skinTabPage4.Text = "我 的 订 单";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.radioButton3);
+            this.groupBox1.Controls.Add(this.radioButton2);
+            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Location = new System.Drawing.Point(17, 7);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(457, 39);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "订单查询";
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(149, 17);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(65, 22);
+            this.radioButton3.TabIndex = 2;
+            this.radioButton3.Text = "未付款";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(78, 17);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(65, 22);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.Text = "已付款";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
+            this.radioButton1.Location = new System.Drawing.Point(6, 17);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(52, 22);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "全部";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // listView3
+            // 
+            this.listView3.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader13,
+            this.columnHeader14,
+            this.columnHeader15,
+            this.columnHeader16});
+            this.listView3.GridLines = true;
+            this.listView3.HideSelection = false;
+            this.listView3.Location = new System.Drawing.Point(9, 52);
+            this.listView3.Name = "listView3";
+            this.listView3.Size = new System.Drawing.Size(962, 399);
+            this.listView3.TabIndex = 0;
+            this.listView3.UseCompatibleStateImageBehavior = false;
+            this.listView3.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader13
+            // 
+            this.columnHeader13.Text = "订单号";
+            this.columnHeader13.Width = 135;
+            // 
+            // columnHeader14
+            // 
+            this.columnHeader14.Text = "总价";
+            this.columnHeader14.Width = 100;
+            // 
+            // columnHeader15
+            // 
+            this.columnHeader15.Text = "是否支付";
+            this.columnHeader15.Width = 95;
+            // 
+            // columnHeader16
+            // 
+            this.columnHeader16.Text = "订单状态";
+            // 
+            // skinTabPage5
+            // 
+            this.skinTabPage5.BackColor = System.Drawing.Color.White;
+            this.skinTabPage5.Controls.Add(this.skinButton5);
+            this.skinTabPage5.Controls.Add(this.skinButton4);
+            this.skinTabPage5.Controls.Add(this.listView2);
+            this.skinTabPage5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.skinTabPage5.Location = new System.Drawing.Point(180, 0);
+            this.skinTabPage5.Name = "skinTabPage5";
+            this.skinTabPage5.Size = new System.Drawing.Size(974, 547);
+            this.skinTabPage5.TabIndex = 1;
+            this.skinTabPage5.TabItemImage = global::MySQL_Shop.Properties.Resources.Address;
+            this.skinTabPage5.Text = "收 货  地  址";
+            // 
+            // skinButton5
+            // 
+            this.skinButton5.BackColor = System.Drawing.Color.Transparent;
+            this.skinButton5.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.skinButton5.DownBack = null;
+            this.skinButton5.Location = new System.Drawing.Point(826, 483);
+            this.skinButton5.MouseBack = null;
+            this.skinButton5.Name = "skinButton5";
+            this.skinButton5.NormlBack = null;
+            this.skinButton5.Size = new System.Drawing.Size(145, 37);
+            this.skinButton5.TabIndex = 2;
+            this.skinButton5.Text = "修改收货信息";
+            this.skinButton5.UseVisualStyleBackColor = false;
+            this.skinButton5.Click += new System.EventHandler(this.skinButton5_Click);
+            // 
+            // skinButton4
+            // 
+            this.skinButton4.BackColor = System.Drawing.Color.Transparent;
+            this.skinButton4.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.skinButton4.DownBack = null;
+            this.skinButton4.Location = new System.Drawing.Point(660, 483);
+            this.skinButton4.MouseBack = null;
+            this.skinButton4.Name = "skinButton4";
+            this.skinButton4.NormlBack = null;
+            this.skinButton4.Size = new System.Drawing.Size(138, 35);
+            this.skinButton4.TabIndex = 1;
+            this.skinButton4.Text = "新增收货地址";
+            this.skinButton4.UseVisualStyleBackColor = false;
+            this.skinButton4.Click += new System.EventHandler(this.skinButton4_Click);
+            // 
+            // listView2
+            // 
+            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader6,
+            this.columnHeader7,
+            this.columnHeader8,
+            this.columnHeader9,
+            this.columnHeader10,
+            this.columnHeader11,
+            this.columnHeader12});
+            this.listView2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.listView2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.listView2.FullRowSelect = true;
+            this.listView2.GridLines = true;
+            this.listView2.HideSelection = false;
+            this.listView2.Location = new System.Drawing.Point(0, 0);
+            this.listView2.MultiSelect = false;
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(974, 449);
+            this.listView2.TabIndex = 0;
+            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.listView2.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "收件人";
+            this.columnHeader1.Width = 75;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "电话";
+            this.columnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader6.Width = 105;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "省";
+            this.columnHeader7.Width = 65;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "市";
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "区";
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "详细地址";
+            this.columnHeader10.Width = 375;
+            // 
+            // columnHeader11
+            // 
+            this.columnHeader11.Text = "邮编";
+            this.columnHeader11.Width = 120;
+            // 
+            // columnHeader12
+            // 
+            this.columnHeader12.Text = "默认地址";
+            this.columnHeader12.Width = 99;
+            // 
+            // skinTabPage6
+            // 
+            this.skinTabPage6.BackColor = System.Drawing.Color.White;
+            this.skinTabPage6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.skinTabPage6.Location = new System.Drawing.Point(180, 0);
+            this.skinTabPage6.Name = "skinTabPage6";
+            this.skinTabPage6.Size = new System.Drawing.Size(974, 547);
+            this.skinTabPage6.TabIndex = 2;
+            this.skinTabPage6.TabItemImage = global::MySQL_Shop.Properties.Resources.profile;
+            this.skinTabPage6.Text = "个 人 信 息";
+            // 
             // Form_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1006, 626);
+            this.ClientSize = new System.Drawing.Size(1162, 621);
             this.Controls.Add(this.skinTabControl1);
+            this.MinimumSize = new System.Drawing.Size(1162, 621);
             this.Name = "Form_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "电   子  商  务  系  统";
@@ -324,6 +605,12 @@ namespace MySQL_Shop
             this.skinTabPage2.ResumeLayout(false);
             this.skinTabPage2.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
+            this.skinTabPage3.ResumeLayout(false);
+            this.skinTabControl2.ResumeLayout(false);
+            this.skinTabPage4.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.skinTabPage5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -347,5 +634,29 @@ namespace MySQL_Shop
         private CCWin.SkinControl.SkinLabel skinLabel1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 修改数量ToolStripMenuItem;
+        private CCWin.SkinControl.SkinTabControl skinTabControl2;
+        private CCWin.SkinControl.SkinTabPage skinTabPage4;
+        private CCWin.SkinControl.SkinTabPage skinTabPage5;
+        private CCWin.SkinControl.SkinTabPage skinTabPage6;
+        private CCWin.SkinControl.SkinButton skinButton5;
+        private CCWin.SkinControl.SkinButton skinButton4;
+        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.ColumnHeader columnHeader10;
+        private System.Windows.Forms.ColumnHeader columnHeader11;
+        private System.Windows.Forms.ColumnHeader columnHeader12;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.ListView listView3;
+        private System.Windows.Forms.ColumnHeader columnHeader13;
+        private System.Windows.Forms.ColumnHeader columnHeader14;
+        private System.Windows.Forms.ColumnHeader columnHeader15;
+        private System.Windows.Forms.ColumnHeader columnHeader16;
     }
 }

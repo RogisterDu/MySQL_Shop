@@ -101,6 +101,18 @@
     <Compile Include="AddToCart.Designer.cs">
       <DependentUpon>AddToCart.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_AddressEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_AddressEdit.Designer.cs">
+      <DependentUpon>Form_AddressEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_ChooseAddress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ChooseAddress.Designer.cs">
+      <DependentUpon>Form_ChooseAddress.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +124,12 @@
     </Compile>
     <Compile Include="Form_Main.Designer.cs">
       <DependentUpon>Form_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Register.Designer.cs">
+      <DependentUpon>Form_Register.cs</DependentUpon>
     </Compile>
     <Compile Include="GlobalVariable.cs" />
     <Compile Include="MySQLHelper.cs" />
@@ -126,6 +144,12 @@
     <EmbeddedResource Include="AddToCart.resx">
       <DependentUpon>AddToCart.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_AddressEdit.resx">
+      <DependentUpon>Form_AddressEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_ChooseAddress.resx">
+      <DependentUpon>Form_ChooseAddress.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_Login.resx">
       <DependentUpon>Form_Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -134,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_PayInfo.resx">
       <DependentUpon>Form_PayInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Register.resx">
+      <DependentUpon>Form_Register.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -170,6 +197,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Libs\shopping_cartFull.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Libs\Address.png" />
+    <Content Include="Libs\MyOrder.png" />
+    <Content Include="Libs\profile.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

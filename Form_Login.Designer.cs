@@ -228,6 +228,7 @@ namespace MySQL_Shop
             this.skinButton2.TabIndex = 1;
             this.skinButton2.Text = "注册";
             this.skinButton2.UseVisualStyleBackColor = false;
+            this.skinButton2.Click += new System.EventHandler(this.skinButton2_Click);
             // 
             // skinButton1
             // 

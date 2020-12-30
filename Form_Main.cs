@@ -16,7 +16,7 @@ namespace MySQL_Shop
         MySQLHelper DB = GlobalVariable.helper;
         private string UserID = string.Empty;
         public double sumPay = 0;
-
+        public int RadioButoonChoose =0;
         public Form_Main()
         {
             InitializeComponent();
@@ -26,6 +26,7 @@ namespace MySQL_Shop
         {
             skinDataGridView1.AllowUserToAddRows = false;
             skinDataGridView1.ReadOnly = true;
+
             Form_Login form_Login = new Form_Login();
             form_Login.ShowDialog();
             if (!form_Login.isLogin)
@@ -41,8 +42,65 @@ namespace MySQL_Shop
             LoadCartInfo();
             LoadItem();//加载商品信息
             //CallRecursive(skinTreeView1);
+            LoadAddressList();
+            LoadMyList(2);
             skinTabControl1.SelectTab(0);
         }
+
+        private void LoadMyList(int is_pay)
+        {
+            string sql = @"select id, total_price,IF(is_pay = 0,'已支付','未支付') as is_pay,IF(status = 0,'未发货','已发货') as status from sh_order where user_id ='" + UserID+"'";
+            if (is_pay != 2)
+            {
+                sql += " and is_pay =" + is_pay ;
+            }
+            DataSet CartSet = DB.GetDataSet(sql);
+            this.listView3.BeginUpdate();
+            listView3.Items.Clear();
+            for (int i = 0; i < CartSet.Tables[0].DefaultView.Count; i++)
+            {
+                DataRow row = CartSet.Tables[0].DefaultView[i].Row;
+                ListViewItem item = new ListViewItem(row["id"].ToString());
+                item.Tag = row["id"].ToString();
+                item.SubItems.Add(row["total_price"].ToString());
+                item.SubItems.Add(row["is_pay"].ToString());
+                item.SubItems.Add(row["status"].ToString());
+
+                this.listView3.Items.Add(item);
+            }
+            this.listView3.EndUpdate();
+        }
+
+        /// <summary>
+        /// 加载收货地址
+        /// </summary>
+        private void LoadAddressList()
+        {
+            string sql = @"select sh_user_address.id, consignee,IF(is_default > 0,'是','') as is_default, province, city, district, address, zip, phone
+                           from sh_user_address
+                           where user_id = '" + UserID + "'";
+
+            DataSet CartSet = DB.GetDataSet(sql);
+            this.listView2.BeginUpdate();
+            listView2.Items.Clear();
+            for (int i = 0; i < CartSet.Tables[0].DefaultView.Count; i++)
+            {
+                DataRow row = CartSet.Tables[0].DefaultView[i].Row;
+                ListViewItem item = new ListViewItem(row["consignee"].ToString());
+                item.Tag = row["id"].ToString();
+                item.SubItems.Add(row["phone"].ToString());
+                item.SubItems.Add(row["province"].ToString());
+                item.SubItems.Add(row["city"].ToString());
+                item.SubItems.Add(row["district"].ToString());
+                item.SubItems.Add(row["address"].ToString());
+                item.SubItems.Add(row["zip"].ToString());
+                item.SubItems.Add(row["is_default"].ToString());
+
+                this.listView2.Items.Add(item);
+            }
+            this.listView2.EndUpdate();
+        }
+
         /// <summary>
         ///  加载购物车
         /// </summary>
@@ -346,12 +404,23 @@ namespace MySQL_Shop
         /// <param name="e"></param>
         private void skinButton3_Click(object sender, EventArgs e)
         {
+            if (listView1.CheckedItems.Count==0)
+            {
+                MessageBox.Show("您未选中任何商品");
+                return;
+            }
             Form_PayInfo form_PayInfo = new Form_PayInfo();
             form_PayInfo.PayuserID = UserID;
             form_PayInfo.Loadingmode = 0;
             form_PayInfo.totalPay = sumPay;
             form_PayInfo.ShowDialog();
-            DeleteFromCart();
+            if (form_PayInfo.isPay ==0 || form_PayInfo.isPay == 1)
+            {
+                DeleteFromCart(); //已购买的和购买的未付款的从 购物车删除 取消订单不删除
+            }
+            LoadMyList(2);
+            radioButton1.Checked = true;
+            radioButton2.Checked = radioButton2.Checked = false;
         }
         /// <summary>
         /// 更改购物车
@@ -370,12 +439,9 @@ namespace MySQL_Shop
         private void sumFinalPay()
         {
             sumPay = 0;
-            for (int i = 0; i < listView1.Items.Count; i++)
+            for (int i = 0; i < listView1.CheckedItems.Count; i++)
             {
-                if (listView1.Items[i].Checked)
-                {
-                    sumPay += Convert.ToDouble(listView1.Items[i].SubItems[3].Text);
-                }
+                    sumPay += Convert.ToDouble(listView1.CheckedItems[i].SubItems[3].Text);
             }
             skinLabel1.Text = "总价为" + sumPay.ToString();
         }
@@ -420,6 +486,101 @@ namespace MySQL_Shop
             string sql = "delete from sh_user_shopcart where is_select = 0 and user_id = '" + UserID + "'";
             DB.Execute(sql);
             LoadCartInfo();
+        }
+        /// <summary>
+        /// 新增收货地址
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void skinButton4_Click(object sender, EventArgs e)
+        {
+            Form_AddressEdit form_AddressEdit = new Form_AddressEdit();
+            form_AddressEdit.LoadingAddressmode = 0;
+            form_AddressEdit.UserID = UserID;
+            form_AddressEdit.ShowDialog();
+            LoadAddressList();
+
+        }
+        /// <summary>
+        /// 修改地址
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void skinButton5_Click(object sender, EventArgs e)
+        {
+            if (listView2.SelectedItems.Count !=1)
+            {
+                MessageBox.Show("请选择修改的地址");
+            }
+            else
+            {
+
+                Form_AddressEdit form_AddressEdit = new Form_AddressEdit();
+                form_AddressEdit.ID = listView2.SelectedItems[0].Tag.ToString();
+                form_AddressEdit.LoadingAddressmode = 1;
+                form_AddressEdit.consignee = listView2.SelectedItems[0].SubItems[0].Text;
+                form_AddressEdit.phone = listView2.SelectedItems[0].SubItems[1].Text;
+                form_AddressEdit.zip = listView2.SelectedItems[0].SubItems[2].Text;
+                form_AddressEdit.province = listView2.SelectedItems[0].SubItems[3].Text;
+                form_AddressEdit.city = listView2.SelectedItems[0].SubItems[4].Text;
+                form_AddressEdit.district = listView2.SelectedItems[0].SubItems[5].Text;
+                form_AddressEdit.address = listView2.SelectedItems[0].SubItems[6].Text;
+                form_AddressEdit.UserID = UserID;
+
+                form_AddressEdit.ShowDialog();
+                LoadAddressList();
+            }
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked)
+            {
+                LoadMyList(2);
+            }
+            if (radioButton2.Checked)
+            {
+                LoadMyList(0);
+            }
+
+            if (radioButton3.Checked)
+            {
+                LoadMyList(1);
+            }
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked)
+            {
+                LoadMyList(2);
+            }
+            if (radioButton2.Checked)
+            {
+                LoadMyList(0);
+            }
+
+            if (radioButton3.Checked)
+            {
+                LoadMyList(1);
+            }
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked)
+            {
+                LoadMyList(2);
+            }
+            if (radioButton2.Checked)
+            {
+                LoadMyList(0);
+            }
+
+            if (radioButton3.Checked)
+            {
+                LoadMyList(1);
+            }
         }
     }
 }

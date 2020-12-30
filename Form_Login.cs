@@ -56,5 +56,15 @@ namespace MySQL_Shop
         {
             
         }
+
+        private void skinButton2_Click(object sender, EventArgs e)
+        {
+            Form_Register form_Register = new Form_Register();
+            form_Register.ShowDialog();
+            if (form_Register.IsRegister)
+            {
+                skinTextBox1.Text = form_Register.LoginName;
+            }
+        }
     }
 }
